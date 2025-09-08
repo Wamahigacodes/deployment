@@ -1,0 +1,19 @@
+name = "prescripto-backend"
+main = "server.js"
+compatibility_date = "2024-01-01"
+account_id = "${CLOUDFLARE_ACCOUNT_ID}"
+
+[env.production]
+name = "prescripto-backend-prod"
+
+[env.staging]
+name = "prescripto-backend-staging"
+
+[build]
+command = "npm install"
+
+[env.production.vars]
+NODE_ENV = "production"
+
+[env.staging.vars]
+NODE_ENV = "staging"

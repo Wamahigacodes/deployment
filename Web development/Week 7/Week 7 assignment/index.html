@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Color Palette Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🎨 Color Palette Generator</h1>
+        <p>Create beautiful color schemes with interactive animations</p>
+    </header>
+
+    <main>
+        <!-- Control Panel -->
+        <section class="controls">
+            <div class="input-group">
+                <label for="baseColor">Base Color:</label>
+                <input type="color" id="baseColor" value="#3498db">
+            </div>
+            
+            <div class="input-group">
+                <label for="paletteType">Palette Type:</label>
+                <select id="paletteType">
+                    <option value="analogous">Analogous</option>
+                    <option value="complementary">Complementary</option>
+                    <option value="triadic">Triadic</option>
+                    <option value="monochromatic">Monochromatic</option>
+                </select>
+            </div>
+
+            <button id="generateBtn" class="btn-primary">Generate Palette</button>
+            <button id="animateAllBtn" class="btn-secondary">Animate All Colors</button>
+        </section>
+
+        <!-- Color Palette Display -->
+        <section class="palette-container">
+            <div class="color-card" id="color1">
+                <div class="color-display"></div>
+                <div class="color-info">
+                    <span class="color-value">#3498db</span>
+                    <button class="copy-btn" onclick="copyToClipboard('#3498db')">Copy</button>
+                </div>
+            </div>
+
+            <div class="color-card" id="color2">
+                <div class="color-display"></div>
+                <div class="color-info">
+                    <span class="color-value">#2980b9</span>
+                    <button class="copy-btn" onclick="copyToClipboard('#2980b9')">Copy</button>
+                </div>
+            </div>
+
+            <div class="color-card" id="color3">
+                <div class="color-display"></div>
+                <div class="color-info">
+                    <span class="color-value">#1abc9c</span>
+                    <button class="copy-btn" onclick="copyToClipboard('#1abc9c')">Copy</button>
+                </div>
+            </div>
+
+            <div class="color-card" id="color4">
+                <div class="color-display"></div>
+                <div class="color-info">
+                    <span class="color-value">#e74c3c</span>
+                    <button class="copy-btn" onclick="copyToClipboard('#e74c3c')">Copy</button>
+                </div>
+            </div>
+
+            <div class="color-card" id="color5">
+                <div class="color-display"></div>
+                <div class="color-info">
+                    <span class="color-value">#f39c12</span>
+                    <button class="copy-btn" onclick="copyToClipboard('#f39c12')">Copy</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animation Controls -->
+        <section class="animation-controls">
+            <h3>Animation Effects</h3>
+            <div class="animation-buttons">
+                <button class="btn-effect" data-effect="pulse">Pulse Effect</button>
+                <button class="btn-effect" data-effect="bounce">Bounce Effect</button>
+                <button class="btn-effect" data-effect="spin">Spin Effect</button>
+                <button class="btn-effect" data-effect="reset">Reset Animations</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Color copied to clipboard!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
